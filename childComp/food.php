@@ -18,22 +18,15 @@ class Food extends Product {
         return $this -> taste;
     }
 
-    public function getPrice ($_registeredUser) {
-        if ($_registeredUser == true) {
-            $this -> price = 10;
-        } else {
-            return $this -> price;
-        }
-    }
-
 }
 
 // ------------- Royal Canin ------------------
-$royalCanin = new Food ("Royal Canin V-Diet", 3.35, "Cibo per cani", "Salmone e Riso", true);
+$user = new User (true);
+$royalCanin = new Food ("Royal Canin V-Diet", 3.35, "Cibo per cani", "Salmone e Riso", $user);
 echo "<div style='display:inline-block;'>";
 echo "<p> Nome Prodotto: " . $royalCanin -> getDescription() . "</p>";
 
-if ($royalCanin -> registeredUser == true) {
+if ($royalCanin -> user -> isRegistered == true) {
     echo "<p> Prezzo Scontato: " . $royalCanin -> getPrice() . "&#8364;</p>";
 } else {
     echo "<p> Prezzo: " . $royalCanin -> getPrice() . "&#8364;</p>";
@@ -45,11 +38,12 @@ echo "</div>";
 
 
 // ------------- Monge ------------------
-$monge = new Food ("Monge All Breeds", 45.99, "Cibo per cani", "Pollo", true);
+$user = new User (false);
+$monge = new Food ("Monge All Breeds", 45.99, "Cibo per cani", "Pollo", $user);
 echo "<div style='display:inline-block; margin-left: 50px;'>";
 echo "<p> Nome Prodotto: " . $monge -> getDescription() . "</p>";
 
-if ($monge -> registeredUser == true) {
+if ($monge -> user -> isRegistered == true) {
     echo "<p> Prezzo Scontato: " . $monge -> getPrice() . "&#8364;</p>";
 } else {
     echo "<p> Prezzo: " . $monge -> getPrice() . "&#8364;</p>";
@@ -61,11 +55,12 @@ echo "</div>";
 
 
 // ------------- Purina ------------------
-$purina = new Food ("Purina Pro Plan Veterinary", 17.00, "Cibo per cani", "Vegetali", false);
+$user = new User (true);
+$purina = new Food ("Purina Pro Plan Veterinary", 17.00, "Cibo per cani", "Vegetali", $user);
 echo "<div style='display:inline-block; margin-left: 50px;'>";
 echo "<p> Nome Prodotto: " . $purina -> getDescription() . "</p>";
 
-if ($purina -> registeredUser == true) {
+if ($purina -> user -> isRegistered == true) {
     echo "<p> Prezzo scontato: " . $purina -> getPrice() . "&#8364;</p>";
 } else {
     echo "<p> Prezzo: " . $purina -> getPrice() . "&#8364;</p>";

@@ -21,11 +21,12 @@ class Bed extends Product {
 }
 
 // ------------- Spike Classic ------------------
-$spikeclassic = new Bed ("Spike Classic", 68.49, "Cuccia per animali", "Cuccia da esterno", true);
+$user = new User (false);
+$spikeclassic = new Bed ("Spike Classic", 68.49, "Cuccia per animali", "Cuccia da esterno", $user);
 echo "<div style='display:inline-block;'>";
 echo "<p> Nome Prodotto: " . $spikeclassic -> getDescription() . "</p>";
 
-if ($spikeclassic -> registeredUser == true) {
+if ($spikeclassic -> user -> isRegistered == true) {
     echo "<p> Prezzo scontato: " . $spikeclassic -> getPrice() . "&#8364;</p>";
 } else {
     echo "<p> Prezzo: " . $spikeclassic -> getPrice() . "&#8364;</p>";
@@ -37,11 +38,12 @@ echo "</div>";
 
 
 // ------------- Spike Comfort ------------------
-$spikecomfort = new Bed ("Spike Comfort", 97.30, "Cuccia per animali", "Cuccia da interno", true);
+$user = new User (true);
+$spikecomfort = new Bed ("Spike Comfort", 97.30, "Cuccia per animali", "Cuccia da interno", $user);
 echo "<div style='display:inline-block; margin-left: 50px;'>";
 echo "<p> Nome Prodotto: " . $spikecomfort -> getDescription() . "</p>";
 
-if ($spikecomfort -> registeredUser == true) {
+if ($spikecomfort -> user -> isRegistered == true) {
     echo "<p> Prezzo scontato: " . $spikecomfort -> getPrice() . "&#8364;</p>";
 } else {
     echo "<p> Prezzo: " . $spikecomfort -> getPrice() . "&#8364;</p>";
@@ -53,11 +55,12 @@ echo "</div>";
 
 
 // ------------- Spike Special ------------------
-$spikespecial = new Bed ("Spike Special", 107.99, "Cuccia per animali", "Cuccia per automobile", false);
+$user = new User (false);
+$spikespecial = new Bed ("Spike Special", 107.99, "Cuccia per animali", "Cuccia per automobile", $user);
 echo "<div style='display:inline-block; margin-left: 50px;'>";
 echo "<p> Nome Prodotto: " . $spikespecial -> getDescription() . "</p>";
 
-if ($spikespecial -> registeredUser == true) {
+if ($spikespecial -> user -> isRegistered == true) {
     echo "<p> Prezzo scontato: " . $spikespecial -> getPrice() . "&#8364;</p>";
 } else {
     echo "<p> Prezzo: " . $spikespecial -> getPrice() . "&#8364;</p>";

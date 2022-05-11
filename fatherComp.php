@@ -6,13 +6,13 @@ class Product {
     protected $description;
     protected $price;
     protected $category;
-    public $registeredUser;
+    public $user;
 
-    public function __construct ($_description, $_price, $_category, $_registeredUser) {
+    public function __construct ($_description, $_price, $_category, $_user) {
         $this -> setDescription ($_description);
+        $this -> user = $_user;
         $this -> setPrice ($_price);
         $this -> setCategory ($_category);
-        $this -> setRegisteredUser ($_registeredUser);
     }
 
     public function setDescription ($_description){
@@ -23,15 +23,13 @@ class Product {
     public function getDescription () {
         return $this -> description;
     }
-    
-    public function setRegisteredUser($_registeredUser) {
-        $this -> registeredUser = $_registeredUser;
-        return $this;
-    }
 
     public function setPrice ($_price){
+        if ($this -> user -> isRegistered == true) {
+            $this -> price = $_price - ($_price * 0.2);
+        } else {
         $this -> price = $_price;
-        return $this;
+        }
     }
     
     public function getPrice () {
@@ -50,4 +48,15 @@ class Product {
 
     
 }
+
+class User {
+    public $isRegistered;
+
+    public function __construct ($_isRegistered) {
+        $this -> isRegistered = $_isRegistered;
+    }
+
+}
+
+    
 ?>
