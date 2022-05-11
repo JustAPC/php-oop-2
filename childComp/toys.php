@@ -19,9 +19,9 @@ class Toy extends Product {
     }
 
 }
+$user = new User (true);
 
 // ------------- Frisbee ------------------
-$user = new User (true);
 $frisbee = new Toy ("Geo Frisbee Tornado", 1.90, "Giocattolo per cani", "Frisbee", $user);
 echo "<div style='display:inline-block;'>";
 echo "<p> Nome Prodotto: " . $frisbee -> getDescription() . "</p>";
@@ -38,7 +38,6 @@ echo "</div>";
 
 
 // ------------- Corda ------------------
-$user = new User (true);
 $corda = new Toy ("Corda Dentale per Cani", 14.30, "Giocattolo per cani", "Corda da masticare", $user);
 echo "<div style='display:inline-block; margin-left: 50px;'>";
 echo "<p> Nome Prodotto: " . $corda -> getDescription() . "</p>";

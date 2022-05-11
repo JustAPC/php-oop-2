@@ -20,8 +20,9 @@ class Bed extends Product {
 
 }
 
-// ------------- Spike Classic ------------------
 $user = new User (false);
+
+// ------------- Spike Classic ------------------
 $spikeclassic = new Bed ("Spike Classic", 68.49, "Cuccia per animali", "Cuccia da esterno", $user);
 echo "<div style='display:inline-block;'>";
 echo "<p> Nome Prodotto: " . $spikeclassic -> getDescription() . "</p>";
@@ -38,7 +39,6 @@ echo "</div>";
 
 
 // ------------- Spike Comfort ------------------
-$user = new User (true);
 $spikecomfort = new Bed ("Spike Comfort", 97.30, "Cuccia per animali", "Cuccia da interno", $user);
 echo "<div style='display:inline-block; margin-left: 50px;'>";
 echo "<p> Nome Prodotto: " . $spikecomfort -> getDescription() . "</p>";
@@ -55,7 +55,6 @@ echo "</div>";
 
 
 // ------------- Spike Special ------------------
-$user = new User (false);
 $spikespecial = new Bed ("Spike Special", 107.99, "Cuccia per animali", "Cuccia per automobile", $user);
 echo "<div style='display:inline-block; margin-left: 50px;'>";
 echo "<p> Nome Prodotto: " . $spikespecial -> getDescription() . "</p>";

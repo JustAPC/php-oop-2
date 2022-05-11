@@ -20,8 +20,9 @@ class Food extends Product {
 
 }
 
-// ------------- Royal Canin ------------------
 $user = new User (true);
+
+// ------------- Royal Canin ------------------
 $royalCanin = new Food ("Royal Canin V-Diet", 3.35, "Cibo per cani", "Salmone e Riso", $user);
 echo "<div style='display:inline-block;'>";
 echo "<p> Nome Prodotto: " . $royalCanin -> getDescription() . "</p>";
@@ -38,7 +39,6 @@ echo "</div>";
 
 
 // ------------- Monge ------------------
-$user = new User (false);
 $monge = new Food ("Monge All Breeds", 45.99, "Cibo per cani", "Pollo", $user);
 echo "<div style='display:inline-block; margin-left: 50px;'>";
 echo "<p> Nome Prodotto: " . $monge -> getDescription() . "</p>";
@@ -55,7 +55,6 @@ echo "</div>";
 
 
 // ------------- Purina ------------------
-$user = new User (true);
 $purina = new Food ("Purina Pro Plan Veterinary", 17.00, "Cibo per cani", "Vegetali", $user);
 echo "<div style='display:inline-block; margin-left: 50px;'>";
 echo "<p> Nome Prodotto: " . $purina -> getDescription() . "</p>";
