@@ -1,7 +1,7 @@
 <?php 
 
-$currentMonth = date('m');
-$currentYear = date ('Y');
+$currentMonth = intval(date('m'));
+$currentYear = intval(date ('Y'));
 
 class Product {
     protected $description;
@@ -65,11 +65,11 @@ trait CreditCard {
     public $ccExpiringMonth;
     public $ccExpiringYear;
     
-    public function ccValidation ($_ccExpiringMonth, $_ccExpiringYear, $currentMonth, $currentYear) {
-        if ($_ccExpiringYear > $currentYear) {
+    public function ccValidation ($currentMonth, $currentYear) {
+        if ($this -> ccExpiringYear > $currentYear) {
             return true;
-        } else if ($_ccExpiringYear == $currentYear) {
-            if ($_ccExpiringMonth >= $currentMonth) {
+        } else if ($this -> ccExpiringYear == $currentYear) {
+            if ($this -> ccExpiringMonth >= $currentMonth) {
                 return true;
             } else {
                 return false;

@@ -69,10 +69,11 @@ echo "<p> Categoria: " . $purina -> getCategory() . "</p>";
 echo "<p> Gusto: " . $purina -> getTaste() . "</p>";
 echo "</div>";
 
-if (ccValidation() == true) {
+if ($userInfo -> ccValidation($currentMonth, $currentYear) == true) {
     echo "La tua carta è valida";
 } else {
     echo "La tua carta non è valida";
+    var_dump ($currentMonth, $currentYear, $userInfo -> ccExpiringMonth, $userInfo -> ccExpiringYear);
 }
 
 ?>
