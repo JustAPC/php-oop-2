@@ -53,17 +53,17 @@ class Product {
 class User {
     public $isRegistered;
     use CreditCard;
-}
-
-trait CreditCard {
-    public $ccExpiringMonth;
-    public $ccExpiringYear;
 
     public function __construct ($_isRegistered, $_ccExpiringMonth, $_ccExpiringYear) {
         $this -> isRegistered = $_isRegistered;
         $this -> ccExpiringMonth = $_ccExpiringMonth;
         $this -> ccExpriingYear = $_ccExpiringYear;
     }
+}
+
+trait CreditCard {
+    public $ccExpiringMonth;
+    public $ccExpiringYear;
     
     public function ccValidation ($_ccExpiringMonth, $_ccExpiringYear, $currentMonth, $currentYear) {
         if ($_ccExpiringYear > $currentYear) {
@@ -76,7 +76,7 @@ trait CreditCard {
             }
         }
     }
-    
+
 }
 
     
