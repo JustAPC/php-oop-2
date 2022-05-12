@@ -20,7 +20,7 @@ class Bed extends Product {
 
 }
 
-$userInfo = new User (false, 11, 2022);
+$userInfo = new User (false, 11, 2021);
 
 // ------------- Spike Classic ------------------
 $spikeclassic = new Bed ("Spike Classic", 68.49, "Cuccia per animali", "Cuccia da esterno", $userInfo);
@@ -69,4 +69,9 @@ echo "<p> Categoria: " . $spikespecial -> getCategory() . "</p>";
 echo "<p> Tipo giocattolo: " . $spikespecial -> getType() . "</p>";
 echo "</div>";
 
+if ($userInfo -> ccValidation($currentMonth, $currentYear) == true) {
+    echo "<div style='margin-top:50px;'>La tua carta è valida!</div>";
+} else {
+    throw new Exception ("La tua carta non è valida");
+}
 ?>

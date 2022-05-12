@@ -20,7 +20,7 @@ class Toy extends Product {
 
 }
 
-$userInfo = new User (true, 11, 2022);
+$userInfo = new User (true, 11, 2023);
 
 // ------------- Frisbee ------------------
 $frisbee = new Toy ("Geo Frisbee Tornado", 1.90, "Giocattolo per cani", "Frisbee", $userInfo);
@@ -68,4 +68,9 @@ echo "<p> Categoria: " . $peluche -> getCategory() . "</p>";
 echo "<p> Tipo giocattolo: " . $peluche -> getType() . "</p>";
 echo "</div>";
 
+if ($userInfo -> ccValidation($currentMonth, $currentYear) == true) {
+    echo "<div style='margin-top:50px;'>La tua carta è valida!</div>";
+} else {
+    throw new Exception ("La tua carta non è valida");
+}
 ?>

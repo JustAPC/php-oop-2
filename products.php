@@ -57,7 +57,7 @@ class User {
     public function __construct ($_isRegistered, $_ccExpiringMonth, $_ccExpiringYear) {
         $this -> isRegistered = $_isRegistered;
         $this -> ccExpiringMonth = $_ccExpiringMonth;
-        $this -> ccExpriingYear = $_ccExpiringYear;
+        $this -> ccExpiringYear = $_ccExpiringYear;
     }
 }
 

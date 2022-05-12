@@ -20,7 +20,7 @@ class Food extends Product {
 
 }
 
-$userInfo = new User (true, 11, 2022);
+$userInfo = new User (true, 04, 2023);
 
 // ------------- Royal Canin ------------------
 $royalCanin = new Food ("Royal Canin V-Diet", 3.35, "Cibo per cani", "Salmone e Riso", $userInfo);
@@ -70,10 +70,9 @@ echo "<p> Gusto: " . $purina -> getTaste() . "</p>";
 echo "</div>";
 
 if ($userInfo -> ccValidation($currentMonth, $currentYear) == true) {
-    echo "La tua carta è valida";
+    echo "<div style='margin-top:50px;'>La tua carta è valida!</div>";
 } else {
-    echo "La tua carta non è valida";
-    var_dump ($currentMonth, $currentYear, $userInfo -> ccExpiringMonth, $userInfo -> ccExpiringYear);
+    throw new Exception ("La tua carta non è valida");
 }
 
 ?>
